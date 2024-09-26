@@ -1,70 +1,164 @@
-# Getting Started with Create React App
+# React With Material UI BOT AI Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a simple AI chatbot interface built using **React** and **Material UI**, designed to allow users to interact with a bot, provide feedback, and revisit conversations. The project focuses on providing an intuitive, responsive, and feature-rich user experience with easy navigation and filtering capabilities for managing chat histories and feedback.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+Check out the live demo: [Bot AI Application](https://botai-taupe.vercel.app/)
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+1. **Interactive Chat Interface**: Users can interact with a mock AI chatbot, and the bot's responses are fetched from a JSON file (`sampleData.json`).
+2. **Thumbs Up/Down Feedback**: Users can like or dislike the bot's responses by hovering over a message and using the floating thumbs up/down buttons.
+3. **End-of-Conversation Feedback**: Users can provide a rating (out of 5) and give subjective feedback at the end of each conversation.
+4. **Conversation History**: Conversations are automatically saved and can be revisited through a sidebar or top navigation panel. Each saved conversation includes the user's feedback.
+5. **Feedback Review**: Users can view a summary of feedback across multiple conversations and filter them based on rating. The feedback is presented in a well-organized, sortable table.
+6. **Multiple Conversations**: The app supports multiple chat sessions, allowing users to start new conversations while preserving previous ones.
+7. **Responsive Design**: The application is built with a focus on UI/UX using Material UI, ensuring responsiveness across different device sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+.
+├───api
+│   └───sampleData.json         # Mock responses for the chatbot
+├───assets                      # Static assets like logos, images
+│   ├───bulb.png
+│   ├───center-logo.png
+│   ├───logo.png
+│   └───user.png
+├───components                  # Reusable UI components
+│   ├───Card                    # Card component for displaying chat messages
+│   ├───Chat                    # Main chat UI
+│   ├───Conversation            # Component to display conversation history
+│   ├───FeedbackModal           # Modal for submitting feedback
+│   ├───Header                  # Header component
+│   ├───InitialChat             # Initial chat interaction components
+│   │   ├───Card
+│   │   └───InitialChat
+│   └───SideNav                 # Sidebar navigation for switching between pages
+├───pages                       # Pages corresponding to views in the app
+│   ├───History                 # History of past conversations
+│   └───Home                    # Home page with the main chat
+├───theme                       # Theme setup for Material UI
+│   ├───ThemeContext.jsx        # Context for managing light/dark theme
+│   └───ThemePallete.jsx        # Custom Material UI palette setup
+├───utils                       # Utility functions
+│   └───index.js
+├───App.js                      # Main application component
+├───index.css                   # Global styles
+└───index.js                    # Entry point of the React app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React:** Frontend framework for building user interfaces.
+- **Material UI:** Component library for UI design and styling.
+- **JavaScript (ES6+):** Language used for scripting.
+- **JSON:** Used to mock AI responses.
+- **CSS:** For custom styling.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
+To set up the project locally, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
 
-## Learn More
+git clone https://github.com/surendergupta/botai.git
+cd botai
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+2. Install dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Make sure you have Node.js installed. Then run:
+```bash
 
-### Code Splitting
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+3. Run the application:
 
-### Analyzing the Bundle Size
+Start the development server:
+```bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm start
 
-### Making a Progressive Web App
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The app should now be running on http://localhost:3000.
 
-### Advanced Configuration
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. **Starting a Conversation:** Begin interacting with the chatbot on the home page.
+2. **Providing Feedback:** Use the thumbs up/down buttons during the conversation or provide a detailed rating at the end of the chat.
+3. **Reviewing Conversations:** Use the sidebar or top navigation to access past conversations and their associated feedback.
+4. **Filtering Feedback:** View all feedback in a sortable table and filter based on ratings.
 
-### Deployment
+## Deployment
+The app is deployed using Vercel. To deploy your own instance:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Ensure you have the Vercel CLI installed:
 
-### `npm run build` fails to minify
+```bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm install -g vercel
+
+```
+
+2. Deploy the app to Vercel:
+
+```bash
+
+vercel
+
+```
+
+Follow the prompts to complete your deployment. Your application will be live at your provided Vercel domain.
+
+## Screenshots
+
+### Home Page
+
+![Home Page](./screenshots/home.png)
+
+### Conversation History
+
+![History Page](./screenshots/history.png)
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (```bash git checkout -b feature-name```).
+3. Make your changes.
+4. Commit your changes (```bash git commit -m 'Add feature'```).
+5. Push to the branch (```bash git push origin feature-name```).
+6. Open a pull request.
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## **Author**
+
+Made with ❤️ by [Surender Gupta](mailto:gupta.surender.1990@gmail.com)
+
+Feel free to reach out via email for any questions or suggestions!

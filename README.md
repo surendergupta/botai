@@ -146,10 +146,10 @@ Follow the prompts to complete your deployment. Your application will be live at
 Contributions are welcome! If you'd like to contribute, please follow these steps:
 
 1. Fork the repository.
-2. Create a new branch (```bash git checkout -b feature-name```).
+2. Create a new branch (```git checkout -b feature-name ```).
 3. Make your changes.
-4. Commit your changes (```bash git commit -m 'Add feature'```).
-5. Push to the branch (```bash git push origin feature-name```).
+4. Commit your changes (``` git commit -m 'Add feature' ```).
+5. Push to the branch (``` git push origin feature-name ```).
 6. Open a pull request.
 
 
